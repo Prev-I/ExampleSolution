@@ -6,12 +6,17 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.ModelBinding;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
+using Example.Site.Filters;
 
 
 namespace Example.Site.Controllers
 {
+    [FakeAuthenticationFilter("Item")]
+    [RoutePrefix("Api/Item")]
     public class ItemController : ApiController
     {
         // GET: api/Item

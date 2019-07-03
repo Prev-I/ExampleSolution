@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Example.Site.Filters;
+
 
 namespace Example.Site
 {
@@ -19,6 +21,9 @@ namespace Example.Site
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            //TODO: Check if is ready to be enabled on site
+            //config.Filters.Add(new SecureChannelFilter());
         }
     }
 }
